@@ -259,6 +259,9 @@ extern class BtRigidBody extends BtCollisionObject {
 	public function setAngularVelocity(ang_vel:BtVector3):Void;
 	public function setLinearFactor(linearFactor:BtVector3):Void;
 	public function setAngularFactor(angFac:BtVector3):Void;
+	public function setDamping(linear:BtScalar, angular:BtScalar):Void;
+    public function applyForce(force:BtVector3, rel_pos:BtVector3):Void;
+    public function applyTorque(torque:BtVector3):Void;
 }
 
 // ------------------------------------------------------
@@ -1281,6 +1284,7 @@ extern class BtManifoldPoint {
 	public function getDistance():BtScalar;
 	public function getPositionWorldOnA():BtVector3;
 	public function getPositionWorldOnB():BtVector3;
+	public function getAppliedImpulse():BtScalar;
 }
 
 // ------------------------------------------------------
